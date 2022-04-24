@@ -22,7 +22,7 @@ cd docs/.vuepress/dist
 if [ -z "$GITHUB_TOKEN" ]; then
   # 手动部署
   msg='deploy'
-  githubUrl=git@github.com:oddfar/notes.git
+  githubUrl=https://qianyizzz:${GITHUB_TOKEN}@github.com/qianyizzz/notes.git
 else
   # 自动部署
   msg='来自github actions的自动部署'
@@ -33,7 +33,7 @@ fi
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl master:gh-pages # 推送到github
+git push -f $githubUrl master:wxy-pages # 推送到github
 
 
 cd - # 退回开始所在目录
