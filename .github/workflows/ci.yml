@@ -1,11 +1,10 @@
 name: CI
 
+#on: [push]
+
 # 在master分支发生push事件时触发。
-on: 
+on:
   push:
-    branches:
-      - master
-  pull_request:
     branches:
       - master
 
@@ -19,19 +18,19 @@ jobs: # 工作流
 
     steps: # 步骤
       - name: Checkout # 步骤1
-      # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
-        uses: QianyizzZ/notes
-      
+        # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
+        uses: actions/checkout@v1
+
       - name: Use Node.js ${{ matrix.node-version }} # 步骤2
-        uses: QianyizzZ/setup-node@v1 # 作用：安装nodejs
+        uses: actions/setup-node@v1 # 作用：安装nodejs
         with:
           node-version: ${{ matrix.node-version }} # 版本
-
       - name: run deploy.sh # 步骤5：执行脚本deploy.sh
         env: # 设置环境变量，未设置则不运行
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # toKen私密变量
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }} # gitee的ssh
 
         run: npm install && npm run deploy
-        
+
         ## ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
         ## 注意：不需要同步到gitee镜像，则把步骤3和4删掉
