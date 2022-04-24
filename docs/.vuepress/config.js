@@ -11,7 +11,7 @@ module.exports = {
 
   plugins,
   themeConfig,
-  base,  //引入后缀
+  base,  //引入后缀` vvvvvvvvvvvvv
 
   title: "OddFar's Notes",
   description: '我们在黑暗中并肩前行，走在各自的朝圣路上!', // 描述,以 <meta> 标签渲染到页面html中
