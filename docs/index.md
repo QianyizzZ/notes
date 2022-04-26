@@ -14,6 +14,5 @@ postList: simple
 ---
 
 
-
-<h2 align="center">黎明之前总有一段时间特别黑。</h2>
+<h2 align="center">学习，重要的是过程，而非结果。</h2>
 
