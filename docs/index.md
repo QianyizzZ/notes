@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /img/web.png
-heroText: Wxy's Notes
+heroText: wxy's Notes
 tagline: 学习重要的是过程，而非结果！加油！
 actionText: 立刻进入 →
 actionLink: /java/
