@@ -39,8 +39,8 @@ module.exports = {
     },
 
     author: { // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, href: String}
-        name: 'zhiyuan', // 必需
-        href: 'https://oddfar.com/' // 可选的
+        name: 'wxy', // 必需
+        href: 'https://qianyizzz.github.io/notes/' // 可选的
     },
     // blogger:{ // 博主信息，显示在首页侧边栏
     //   avatar: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
@@ -63,7 +63,7 @@ module.exports = {
     //   ]
     // },
     footer: { // 页脚信息
-        createYear: 2021, // 博客创建年份
+        createYear: 2022, // 博客创建年份
         copyrightInfo: 'oddfar | <a href="https://note.oddfar.com/sitemap.xml" target="_blank">sitemap.xml</a> | <a href="https://beian.miit.gov.cn/" target="_blank">冀ICP备20001094号</a>', // 博客版权信息，支持a标签
     },
     //htmlModules // 插入hmtl(广告)模块

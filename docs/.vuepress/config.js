@@ -12,7 +12,7 @@ module.exports = {
     themeConfig,
     base,  //引入后缀` vvvvvvvvvvvvv
 
-    title: "wxy's notes",
+    title: "Jerry's Binlog",
     description: 'Write the Code. Change the World.', // 描述,以 <meta> 标签渲染到页面html中
 
     head: [
