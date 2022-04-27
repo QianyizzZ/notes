@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: /img/web.png
-heroText: wxy's Notes
-tagline: 学习重要的是过程，而非结果！加油！
+heroText: Jerry's Binlog
+tagline: Write the Code. Change the World.
 actionText: 立刻进入 →
 actionLink: /java/
 bannerBg: none 
@@ -14,5 +14,5 @@ postList: simple
 ---
 
 
-<h2 align="center">学习重要的是过程，而非结果。</h2>
+<h2 align="center">Learning is the process, not the result.</h2>
 

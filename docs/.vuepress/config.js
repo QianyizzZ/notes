@@ -12,12 +12,12 @@ module.exports = {
     themeConfig,
     base,  //引入后缀` vvvvvvvvvvvvv
 
-    title: "OddFar's Notes",
-    description: '我们在黑暗中并肩前行，走在各自的朝圣路上!', // 描述,以 <meta> 标签渲染到页面html中
+    title: "wxy's notes",
+    description: 'Write the Code. Change the World.', // 描述,以 <meta> 标签渲染到页面html中
 
     head: [
         ['link', {rel: 'icon', href: '/img/favicon.ico'}],
-        ['meta', {name: 'keywords', content: 'oddfar,zhiyuan'}],
+        ['meta', {name: 'keywords', content: 'qianyizzz,wxy'}],
         ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
     ],
     markdown: {
