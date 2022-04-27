@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/web.png
 heroText: Wxy's Notes
-tagline: 我们在黑暗中并肩前行，走在各自的朝圣路上!
+tagline: 学习重要的是过程，而非结果！加油！
 actionText: 立刻进入 →
 actionLink: /java/
 bannerBg: none 
@@ -14,5 +14,5 @@ postList: simple
 ---
 
 
-<h2 align="center">学习，重要的是过程，而非结果。</h2>
+<h2 align="center">学习重要的是过程，而非结果。</h2>
 
