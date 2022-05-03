@@ -1,22 +1,22 @@
 module.exports = [
-    {text: '首页', link: '/'},
+    {text: 'HomePage', link: '/'},
     {
         text: 'Java', link: '/java/', items: [
             {
-                text: 'Java虚拟机', link: 'jvm/'
+                text: 'Java虚拟机', link: '/java/jvm/'
             },
             {
-                text: 'Java并发编程', link: 'juc/'
+                text: 'Java并发编程', link: '/java/juc/'
             }
         ]
     },
     {
         text: 'Database', link: '/database/', items: [
             {
-                text: 'MySQL', link: 'mysql/'
+                text: 'MySQL', link: '/database/mysql/'
             },
             {
-                text: 'MongoDB', link: 'mongodb/'
+                text: 'MongoDB', link: '/database/mongodb/'
             },
         ]
     },
@@ -24,31 +24,30 @@ module.exports = [
     {
         text: 'Framework', link: '/framework/', items: [
             {
-                text: 'Mybatis-plus', link: 'mybatis-plus/'
+                text: 'Mybatis-plus', link: '/framework/mybatis-plus/'
             },
             {
-                text: 'SpringBoot', link: 'springboot/'
+                text: 'SpringBoot', link: '/framework/springboot/'
             },
         ]
     },
     {
         text: 'Development', link: '/dev/', items: [
             {
-                text: 'Git', link: 'git/'
+                text: 'Git', link: '/dev/git/'
             },
         ]
     },
     {
-        text: 'Project',
-        items: [
+        text: 'Project', link: '/project/', items: [
             {
-                text: 'project-01', link: '/campus01/'
+                text: 'project-01', link: '/project/campus01/'
             },
             {
-                text: 'project-02', link: '/campus02/'
+                text: 'project-02', link: '/project/campus02/'
             },
             {
-                text: 'project-03', link: '/campus03/'
+                text: 'project-03', link: '/project/campus03/'
             },
         ]
     },
