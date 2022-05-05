@@ -179,7 +179,56 @@ public class Test {
 
 ![image-20220504225118856](C:\Users\wxy\AppData\Roaming\Typora\typora-user-images\image-20220504225118856.png)
 
+**内存溢出**
+
+- 1.8以前会导致**永久代**内存溢出
+- 1.8以后会导致**元空间**内存溢出
+
+**常量池**
+
+二进制字节码的组成：类的基本信息、常量池、类的方法定义（包含了虚拟机指令）
+
+**反编译**
+
+- 获取class文件路径（Idea的控制台/JDK的bin目录下执行cmd，在执行javac）
+- 执行javap -v path
+- 显示类信息
+
+我的方法：
+
+在Idea中将准备好的Java文件进行build，出现out目录
+
+![image-20220505233346729](C:\Users\wxy\AppData\Roaming\Typora\typora-user-images\image-20220505233346729.png)
+
+找到编译后的Test文件，在Idea的控制台打开
+
+![image-20220505233443959](C:\Users\wxy\AppData\Roaming\Typora\typora-user-images\image-20220505233443959.png)
+
+控制台执行以下命令出现如下信息
+
+```dom
+javap -v Test.class
+```
+
+**类基本信息**、**常量池**
+
+![image-20220505233940550](C:\Users\wxy\AppData\Roaming\Typora\typora-user-images\image-20220505233940550.png)
+
+**虚拟机中执行编译的方法**（框内的是真正编译执行的内容，#号的内容需要在常量池中查找）
+
+![image-20220505234224095](C:\Users\wxy\AppData\Roaming\Typora\typora-user-images\image-20220505234224095.png)
+
+**常量池**
+
+就是一张表（如上图中Constant pool），虚拟机指令根据这张表找到要执行的类名、方法名等
+
+**运行时常量池**
+
+当改类被加载时，常量池信息会放入运行时常量池，并把符号地址转变为真实地址（如#2）
+
 ## 2.6 直接内存
+
+
 
 # 三、垃圾回收
 
