@@ -118,3 +118,74 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
 每次对 `String` 类型进行改变的时候，都会生成一个新的 `String` 对象，然后将指针指向新的 `String` 对象。`StringBuffer` 每次都会对 `StringBuffer` 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 `StringBuilder` 相比使用 `StringBuffer` 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险
 
 ### == 和 equals()
+
+**`==`** 对于基本类型和引用类型的作用效果是不同的：
+
+- 对于基本数据类型来说，`==` 比较的是值。
+- 对于引用数据类型来说，`==` 比较的是对象的内存地址。
+
+**`equals()`** 不能用于判断基本数据类型的变量，只能用来判断两个对象是否相等。`equals()`方法存在于`Object`类中，而`Object`类是所有类的直接或间接父类，因此所有的类都有`equals()`方法。
+
+`Object` 类 `equals()` 方法：
+
+```java
+public boolean equals(Object obj) {
+     return (this == obj);
+}
+```
+
+`equals()` 方法存在两种使用情况：
+
+- **类没有重写 `equals()`方法** ：通过`equals()`比较该类的两个对象时，等价于通过“==”比较这两个对象，使用的默认是 `Object`类`equals()`方法。
+- **类重写了 `equals()`方法** ：一般我们都重写 `equals()`方法来比较两个对象中的属性是否相等；若它们的属性相等，则返回 true(即，认为这两个对象相等)。
+
+`String`类`equals()`方法：
+
+```java
+public boolean equals(Object anObject) {
+    if (this == anObject) {
+        return true;
+    }
+    if (anObject instanceof String) {
+        String anotherString = (String)anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+### hashCode() 与 equals()
+
+**hashCode() 有什么用？**
+
+`hashCode()` 的作用是获取哈希码（`int` 整数），也称为散列码。这个哈希码的作用是确定该对象在哈希表中的索引位置。
+
+`hashCode()`定义在 JDK 的 `Object` 类中，这就意味着 Java 中的任何类都包含有 `hashCode()` 函数。另外需要注意的是： `Object` 的 `hashCode()` 方法是本地方法，也就是用 C 语言或 C++ 实现的，该方法通常用来将对象的内存地址转换为整数之后返回。
+
+```java
+public native int hashCode();
+```
+
+**为什么要有hashCode？**
+
+以“`HashSet` 如何检查重复”为例子来说明为什么要有 `hashCode`？
+
+> 《Head First Java》
+>
+> 当你把对象加入 `HashSet` 时，`HashSet` 会先计算对象的 `hashCode` 值来判断对象加入的位置，同时也会与其他已经加入的对象的 `hashCode` 值作比较，如果没有相符的 `hashCode`，`HashSet` 会假设对象没有重复出现。但是如果发现有相同 `hashCode` 值的对象，这时会调用 `equals()` 方法来检查 `hashCode` 相等的对象是否真的相同。如果两者相同，`HashSet` 就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。这样我们就大大减少了 `equals` 的次数，相应就大大提高了执行速度。
+
+总结 ：
+
+- `equals` 方法判断两个对象是相等的，那这两个对象的 `hashCode` 值也要相等。
+- 两个对象有相同的 `hashCode` 值，他们也不一定是相等的（哈希碰撞）。
